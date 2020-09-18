@@ -7,28 +7,28 @@ class Directory extends Component {
 
     constructor(props) {
         super(props);
-        this.state={
+        this.state = {
             campsites: CAMPSITES
         };
     }
 
     static navigationOptions = {
         title: 'Directory'
-    };
+    }
 
     render() {
         const { navigate } = this.props.navigation;
-        const renderDirectoryItem = ({ item }) => {
+        const renderDirectoryItem = ({item}) => {
             return (
                 <ListItem
                     title={item.name}
                     subtitle={item.description}
                     onPress={() => navigate('CampsiteInfo', { campsiteId: item.id })}
-                    leftAvatar={{ source: require('./images/react-lake.jpg') }}
+                    leftAvatar={{ source: require('./images/react-lake.jpg')}}
                 />
             );
         };
-    
+
         return (
             <FlatList
                 data={this.state.campsites}
@@ -37,7 +37,6 @@ class Directory extends Component {
             />
         );
     }
-    
 }
 
 export default Directory;

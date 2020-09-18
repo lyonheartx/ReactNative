@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
 import Home from './HomeComponent';
 import Directory from './DirectoryComponent';
+import CampsiteInfo from './CampsiteInfoComponent';
 import About from './AboutComponent';
 import Contact from './ContactComponent';
-import CampsiteInfo from './CampsiteInfoComponent';
 import { View, Platform, StyleSheet, Text, ScrollView, Image } from 'react-native';
-import { createStackNavigator, createDrawerNavigator, DrawerItems } from 'react-navigation';
-import ExpoStatusBar from 'expo-status-bar/build/ExpoStatusBar';
 import { Icon } from 'react-native-elements';
+import { createStackNavigator, createDrawerNavigator,
+    DrawerItems } from 'react-navigation';
 import SafeAreaView from 'react-native-safe-area-view';
+
 
 const DirectoryNavigator = createStackNavigator(
     {
@@ -128,7 +129,7 @@ const CustomDrawerContentComponent = props => (
 
 const MainNavigator = createDrawerNavigator(
     {
-        Home: { 
+        Home: {
             screen: HomeNavigator,
             navigationOptions: {
                 drawerIcon: ({tintColor}) => (
@@ -141,7 +142,7 @@ const MainNavigator = createDrawerNavigator(
                 )
             }
         },
-        Directory: { 
+        Directory: {
             screen: DirectoryNavigator,
             navigationOptions: {
                 drawerIcon: ({tintColor}) => (
@@ -152,12 +153,11 @@ const MainNavigator = createDrawerNavigator(
                         color={tintColor}
                     />
                 )
-            } 
+            }
         },
-        About: { 
+        About: {
             screen: AboutNavigator,
             navigationOptions: {
-                
                 drawerLabel: 'About Us',
                 drawerIcon: ({tintColor}) => (
                     <Icon
@@ -169,10 +169,9 @@ const MainNavigator = createDrawerNavigator(
                 )
             }
         },
-        Contact: { 
+        Contact: {
             screen: ContactNavigator,
             navigationOptions: {
-                
                 drawerLabel: 'Contact Us',
                 drawerIcon: ({tintColor}) => (
                     <Icon
@@ -192,7 +191,6 @@ const MainNavigator = createDrawerNavigator(
 );
 
 class Main extends Component {
-
     render() {
         return (
             <View style={{
